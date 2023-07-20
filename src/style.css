@@ -1,0 +1,362 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,italic,500,500italic,600,600italic,700,700italic&display=swap);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+:root {
+    --clr-accent: #162938;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: url('../assets/images/bg.jpg') no-repeat center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* ------------ Button -------- */
+
+.button {
+    font-size: 1rem;
+    padding: 0.6rem 2rem;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: color .3s, background-color .3s, transform .3s;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: var(--clr-accent);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+/* ------------ Button end ---- */
+
+
+/* ------------ Header ------------- */
+
+.header__container {
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__button {
+    margin-left: 1.5rem;
+}
+
+.header__button_active {
+    background-color: #fff;
+    color: var(--clr-accent);
+    cursor: default;
+}
+
+.header__button_active:active {
+    transform: scale(1);
+}
+
+/* ------------ Header  end -------- */
+
+/* ------------ logo ------------- */
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* ------------ logo end --------- */
+
+/* ------------ nav -------------- */
+
+
+.nav__el {
+    margin-right: 0.8rem;
+   
+}
+
+.nav__el span {
+    position: relative;
+}
+
+.nav__el span:after {
+    display: block;
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transform-origin: right;
+    transition: transform .3s;
+    transform: scaleX(0);
+}
+
+.nav__el:hover span:after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ------------ nav end --------- */
+
+/* -------------------------Mobile menu ----------------------------*/
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.mobile-menu__bar {
+    content: '';
+    background-color: #fff;
+    height: 3px;
+    width: 24px;
+    margin-bottom: 5px;
+    transform-origin: center;
+    transition: transform .3s, opacity .3s;
+    position: static;
+}
+
+.mobile-menu_active {
+
+}
+
+.mobile-menu_active .mobile-menu__bar {
+    position: absolute;
+}
+
+.mobile-menu_active > .mobile-menu__bar:nth-child(1) {
+    transform: rotate(45deg);
+}
+.mobile-menu_active > .mobile-menu__bar:nth-child(2) {
+    opacity: 0;;
+}
+.mobile-menu_active > .mobile-menu__bar:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+
+/* --------------------------------Mobile menu end------------------*/
+
+/* ----------------------------------Popups------------------------ */
+
+
+
+.popups {
+    margin: 10rem auto;
+    max-width: 400px;
+    position: relative;
+    transform: scale(1);
+    transition: transform .2s, height .3s;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    height: 525px;
+}
+
+.popups_active {
+    height: 600px;
+}
+
+.popups_disabled {
+    transform: scale(0);
+}
+
+.popups__close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 3px 20px 3px 20px;
+
+    background-color: var(--clr-accent);
+    font-size: 2rem;
+    
+    transition: color .3s, background-color .3s, transform .2s;
+
+    cursor: pointer;
+}
+
+.popups__close-btn:hover {
+    
+    background-color: #fff;
+}
+
+.popups__close-btn:active {
+    transform: scale(0.9);
+}
+
+.popups__close-btn:hover > * {
+    color: var(--clr-accent);
+}
+
+.popups__el {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: height .3s, transform .3s;
+}
+
+.popups__frame {
+    position: absolute;
+    width: 440px;
+    top: 0;
+    transform: translateX(440px);
+    background: transparent;
+    z-index: 4;
+    height: 625px;
+}
+
+#register-popup {
+    height: 600px;   
+}
+
+#login-popup {
+    height: 525px;
+}
+
+.popups__el_unfocused {
+    position: absolute;
+    top: 0;
+    transform: translateX(440px);
+    opacity: 0.5;
+    width: 440px;
+}
+
+
+
+.popup__title {
+    text-align: center;
+    user-select: none;
+    font-size: 1.8rem;
+    margin-top: 18px;
+    color: var(--clr-accent);
+    transition: color .3s;
+}
+
+.popup__title_light {
+    color: #fff;
+}
+
+/* ----------------------------Popups end-----------------------------*/
+
+/* -------------------------------forms------------------------------ */
+
+
+.form {
+    width: 80%;
+}
+
+.form__input-box {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--clr-accent);
+    position: relative;
+    padding:  0 5px 10px 5px;
+    margin-top: 3rem;
+}
+
+.form__input-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: var(--clr-accent);
+}
+
+.form__input-line p {
+    color: var(--clr-accent);
+}
+.form__checkbox {
+    accent-color: var(--clr-accent);
+}
+
+.form__checkbox label {
+    color: var(--clr-accent);
+}
+
+.form__input {
+    background: transparent;
+    font-size: 1rem;
+    color: var(--clr-accent);
+    font-weight: 700;
+    z-index: 3;
+    width: 90%;
+}
+
+.form__link {
+    color: var(--clr-accent);
+}
+
+.form__label {
+    user-select: none;
+    position: absolute;
+    transition: transform .3s;
+    color: var(--clr-accent);
+    z-index: 2;
+}
+
+.form__input-box > label > * {
+    color: var(--clr-accent);
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.form__input_active~.form__label,
+.form__input:focus~.form__label {
+    transform: translateY(-2rem);
+}
+
+.form__button {
+    width: 100%;
+    background-color: var(--clr-accent);
+    border-color: var(--clr-accent);
+    margin-bottom: 2rem;
+}
+.form__button:hover {
+    background-color: #fff;
+    color: var(--clr-accent);
+}
+
+#register-link {
+    font-weight: 600;
+}
+
+/*------------------------------------ forms end------------------------- */

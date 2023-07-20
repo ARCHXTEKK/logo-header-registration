@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/media.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo header__logo">
+                <a href="#">Logo</a>
+            </div>
+            <nav class="nav">
+                <a class="nav__el" href="#"><span>Home</span></a>
+                <a class="nav__el" href="#"><span>About</span></a>
+                <a class="nav__el" href="#"><span>Services</span></a>
+                <a class="nav__el" href="#"><span>Contact</span></a>
+                <button class="button header__button" id="header-login">
+                    Login
+                </button>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-menu__bar"></div>
+                <div class="mobile-menu__bar"></div>
+                <div class="mobile-menu__bar"></div>
+            </div>
+        </div>
+    </header>
+    <div class="popups popups_disabled">
+        <div class="popups__frame"></div>
+        <button class="popups__close-btn"><ion-icon name="close-outline"></ion-icon></button>
+        
+        <div class="popups__el" id="login-popup">
+            <h2 class="popup__title">Login</h2>
+            <form action="" class="form popup__form">
+                <div class="form__input-box">
+                    <input class="form__input" type="email" id="login-email" required>
+                    <label class="form__label" for="login-email">Email</label>
+                    <label for="login-email"><ion-icon name="mail-outline"></ion-icon></label>
+                </div>
+                <div class="form__input-box">
+                    <input class="form__input" type="password" id="login-password" required>
+                    <label class="form__label" for="login-password">Password</label>
+                    <label for="login-password"><ion-icon name="lock-closed-outline"></ion-icon></label>
+                </div>
+                <div class="form__input-line">
+                    <div class="form__checkbox">
+                        <input class="checkbox__input" type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a class="form__link" id="forgot-link" href="#">Forgot Password?</a>
+                </div>
+                <button class="button form__button">Login</button>
+                <div class="form__input-line">
+                    <p>Haven't account yet? <a class="form__link" id="register-link" href="#">Register</a></p>
+                    
+                </div>
+            </form>
+        </div>
+        <div class="popups__el popups__el_unfocused" id="register-popup">
+            <h2 class="popup__title">Register</h2>
+            <form action="" class="form popup__form">
+                <div class="form__input-box">
+                    <input class="form__input" type="text" id="register-username">
+                    <label class="form__label" for="register-username">Username</label>
+                    <label for="register-username"><ion-icon name="person-circle-outline"></ion-icon></label>
+                </div>
+                <div class="form__input-box">
+                    <input class="form__input" type="email" id="register-email" required>
+                    <label class="form__label" for="register-email">Email</label>
+                    <label for="register-email"><ion-icon name="mail-outline"></ion-icon></label>
+                </div>
+                <div class="form__input-box">
+                    <input class="form__input" type="password" id="register-password" required>
+                    <label class="form__label" for="register-password">Password</label>
+                    <label for="register-password"><ion-icon name="lock-closed-outline"></ion-icon></label>
+                </div>
+                <div class="form__input-line">
+                    <div class="form__checkbox">
+                        <input class="checkbox__input" type="checkbox" id="i-agree">
+                        <label for="i-agree">I agree with terms &#38; conditions</label>
+                    </div>
+                </div>
+                <button class="button form__button">Login</button>
+                <div class="form__input-line">
+                    <p>Already have an account? <a class="form__link" id="register-link" href="#">Login</a></p>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="src/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
